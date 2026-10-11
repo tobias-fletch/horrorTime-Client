@@ -84,7 +84,7 @@ export class ProfileView extends React.Component {
       }).then(() => {
         localStorage.removeItem('user');
         localStorage.removeItem('token');
-        window.open('/', '_self');
+        window.open('/horrorTime-Client/', '_self');
       });
 
   }
@@ -108,7 +108,7 @@ export class ProfileView extends React.Component {
       .then((response) => {
         const data = response.data;
         localStorage.setItem("user", data.Username);
-        window.open(`/users/${data.Username}`);
+        window.open(`/horrorTime-Client/users/${data.Username}`);
       }).catch((e) => {
         console.log(e.toJSON());
         console.log(e.response.data);
