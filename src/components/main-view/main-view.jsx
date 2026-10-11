@@ -8,7 +8,7 @@ import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
-import { MoviesList } from '../movies-list/movies-list';
+import MoviesList from '../movies-list/movies-list';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Menu from '../menu/menu';
