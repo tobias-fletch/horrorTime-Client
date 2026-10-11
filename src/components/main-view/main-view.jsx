@@ -126,7 +126,7 @@ class MainView extends React.Component {
     return (
 
       <>
-        <Router>
+        <Router basename="/horrorTime-Client">
 
 
           {user && <Menu style={{ width: "100%", margin: "0" }} user={user} logOut={this.onLoggedOut} />}
