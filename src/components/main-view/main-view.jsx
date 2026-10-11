@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { API_URL } from '../../config';
 
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
@@ -74,7 +75,7 @@ class MainView extends React.Component {
   }
 
   getMovies(token) {
-    axios.get('https://itshorrortime.herokuapp.com/movies', {
+    axios.get(API_URL + '/movies', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -88,7 +89,7 @@ class MainView extends React.Component {
   }
 
   getUser(token, user) {
-    axios.get(`https://itshorrortime.herokuapp.com/users/${user}`, {
+    axios.get(`${API_URL}/users/${user}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
