@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../config';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -31,7 +32,7 @@ export function RegistrationView(props) {
       e.stopPropagation();
     }
     e.preventDefault();
-    axios.post('https://itshorrortime.herokuapp.com/users', {
+    axios.post(API_URL + '/users', {
       Username: username,
       Password: password,
       Email: email,
