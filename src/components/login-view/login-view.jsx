@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../config';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -26,7 +27,7 @@ export function LoginView(props) {
       e.stopPropagation();
     }
     e.preventDefault();
-    axios.post(' https://itshorrortime.herokuapp.com/login', {
+    axios.post(API_URL + '/login', {
       Username: username,
       Password: password
     }).then(response => {
