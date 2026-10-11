@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../config';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Helmet from "react-helmet";
@@ -46,7 +47,7 @@ export class ProfileView extends React.Component {
   }
 
   getUser(token, user) {
-    axios.get(`https://itshorrortime.herokuapp.com/users/${user}`, {
+    axios.get(`${API_URL}/users/${user}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -64,7 +65,7 @@ export class ProfileView extends React.Component {
   }
 
   getMovies(token) {
-    axios.get('https://itshorrortime.herokuapp.com/movies', {
+    axios.get(API_URL + '/movies', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -77,7 +78,7 @@ export class ProfileView extends React.Component {
 
 
   handleDelete(user, token) {
-    axios.delete(`https://itshorrortime.herokuapp.com/users/${user}`,
+    axios.delete(`${API_URL}/users/${user}`,
       {
         headers: { Authorization: `Bearer ${token}` }
       }).then(() => {
@@ -91,7 +92,7 @@ export class ProfileView extends React.Component {
   handleUpdate(user, token, e) {
     e.preventDefault();
 
-    axios.put(`https://itshorrortime.herokuapp.com/users/${user} `,
+    axios.put(`${API_URL}/users/${user}`,
       {
         Username: e.target.username.value,
         Password: e.target.password.value,
@@ -116,7 +117,7 @@ export class ProfileView extends React.Component {
   }
 
   deleteFav(movie, user, token, userInfo) {
-    axios.delete(`https://itshorrortime.herokuapp.com/users/${user}/movies/${movie}`,
+    axios.delete(`${API_URL}/users/${user}/movies/${movie}`,
       {
         headers: {
           'Authorization': `Bearer ${token} `,
