@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { API_URL } from '../../config';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -46,7 +47,7 @@ export class MovieCard extends React.Component {
     console.log(user.user);
     console.log(user.token);
 
-    axios.post(`https://itshorrortime.herokuapp.com/users/${user.user}/movies/${this.props.movie._id}`, {
+    axios.post(`${API_URL}/users/${user.user}/movies/${this.props.movie._id}`, {
     },
       {
         headers: {
