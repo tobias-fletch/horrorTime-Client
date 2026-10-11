@@ -40,7 +40,7 @@ export function RegistrationView(props) {
     }).then(response => {
       const data = response.data;
       // props.onRegister(data);
-      window.open('/', '_self');
+      window.open('/horrorTime-Client/', '_self');
     }).catch(e => {
       console.log('Error Registering User');
     });
